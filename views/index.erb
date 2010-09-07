@@ -8,7 +8,7 @@
     <script type="text/javascript">
 
       document.observe("dom:loaded", function() {
-        $$("span.build_time").each(function(element) { 
+        $$("span.build_time").each(function(element) {
           var ts = new Date(element.innerHTML);
           element.innerHTML = ts.relativeTimeInWords(new Date());
         });
