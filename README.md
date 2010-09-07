@@ -10,29 +10,37 @@ from anywhere in the room.
 
 ## Getting Started
 
-GreenScreen depends on Sinatra to run.  You can install it via rubygems:
-
-    sudo gem install sinatra
-
 To get the GreenScreen application itself, you can clone it from git:
 
-    git clone git://github.com/martinjandrews/greenscreen.git
+    $ git clone git://github.com/martinjandrews/greenscreen.git
 
 Or download the project by clicking on the 'download' link [on this page][dl].
 
 [dl]: http://github.com/martinjandrews/greenscreen/
 
-Once you've got GreenScreen on your machine, edit the config.yml file
-to add links to your build servers.  It contains instructions for
-how you can add the.  GreenScreen has been tested with Hudson, but
-can be used with any continuous integration server that conforms to
-the [multiple project summary reporting standard][cc-xml].
+To install all of GreenScreen's dependencies, switch to its directory
+and do:
+
+    $ rake -f init.rakefile
+
+Once you've got GreenScreen on your machine, copy config.yml.sample to
+config.yml:
+
+    $ cp config.yml.sample config.yml
+
+And then edit the config.yml file to add links to your build servers.
+It contains instructions for how you can add the.  GreenScreen has
+been tested with Hudson, but can be used with any continuous
+integration server that conforms to the [multiple project summary
+reporting standard][cc-xml].
 
 [cc-xml]: http://confluence.public.thoughtworks.org/display/CI/Multiple+Project+Summary+Reporting+Standard
 
-This pretty much means that any of the flavours of cruise control should work too.
+This pretty much means that any of the flavours of cruise control
+should work too.
 
-Once you've got your configuration, you can start GreenScreen as follows:
+Once you've got your configuration, you can start GreenScreen as
+follows:
 
     ruby greenscreen.rb
 
