@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'bundler/setup'
+
 require 'sinatra'
 require 'erb'
 require 'rexml/document'
