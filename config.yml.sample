@@ -23,5 +23,5 @@
 #   username: hudson-user
 #   password: hudson-password
 #   jobs:
-#     - roodi
-#     - runway
+#     - roodi    # the build named "roodi"
+#     - /^run/   # all builds starting with "run"

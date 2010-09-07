@@ -21,10 +21,21 @@ get '/' do
     xml = REXML::Document.new(open(server["url"], open_opts))
     projects = xml.elements["//Projects"]
 
+    job_matchers =
+      if server["jobs"]
+        server["jobs"].collect do |j|
+          if j =~ %r{^/.*/$}
+            Regexp.new(j[1..(j.size-2)])
+          else
+            Regexp.new("^#{Regexp.escape(j)}$")
+          end
+        end
+      end
+
     projects.each do |project|
       monitored_project = MonitoredProject.new(project)
-      if server["jobs"]
-        if server["jobs"].detect {|job| job == monitored_project.name}
+      if job_matchers
+        if job_matchers.detect { |matcher| monitored_project.name =~ matcher }
           @projects << monitored_project
         end
       else
