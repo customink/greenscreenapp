@@ -14,7 +14,11 @@ get '/' do
   @projects = []
 
   servers.each do |server|
-    xml = REXML::Document.new(open(server["url"], :http_basic_authentication=>[server["username"], server["password"]]))
+    open_opts = {}
+    if server["username"] || server["password"]
+      open_opts[:http_basic_authentication] = [ server["username"], server["password"] ]
+    end
+    xml = REXML::Document.new(open(server["url"], open_opts))
     projects = xml.elements["//Projects"]
 
     projects.each do |project|
