@@ -38,13 +38,13 @@
 
     <% @projects.each do |project| %>
       <div class="status <%= project.last_build_status %> <%= project.activity %>">
+        <% if (project.building?) %><p class="building">Building now</p><% end %>
         <div class="content">
           <h1 title="<%= project.name %>"><a href="<%= project.web_url%>"><%= project.name %></a></h1>
           <p>
             Build <%= project.last_build_label %> was a
             <strong><%= project.last_build_status %></strong>
             <span class="build_time" title="<%= project.last_build_time %>"><%= project.last_build_time %></span>.
-            <% if (project.building?) %>Building now.<% end %>
           </p>
         </div>
       </div>

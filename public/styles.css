@@ -33,6 +33,13 @@ p {
   line-height: 1.6em;
 }
 
+p.building {
+  right: 0;
+  top: 0;
+  position: absolute;
+  font-style: italic;
+}
+
 a {
   text-decoration: none;
   color: inherit;
