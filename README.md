@@ -55,3 +55,8 @@ If running on Windows, I'd suggest running Firefox in full screen
 mode.  If on a Mac, either expand the window size to take up as much
 space as possible, or try finding a plugin that lets you go full
 screen.
+
+## Passenger or other rack handlers
+
+GreenScreen also includes a rackup file (`config.ru`) so you can
+deploy it under whichever rack-supporting webserver you like.
