@@ -38,7 +38,12 @@ p.building {
   right: 0;
   top: 0;
   position: absolute;
-  font-style: italic;
+  margin: 3px;
+  padding: 2px 5px;
+  background-color: #444;
+  color: #ff4;
+  z-index: 1;
+  font-size: 100%;
 }
 
 a {
@@ -84,7 +89,7 @@ a {
 
 .building {
   background-color: #FFFF44;
-  color: black;
+  color: #444;
 }
 
 .building.failure {
