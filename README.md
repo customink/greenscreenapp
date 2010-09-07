@@ -51,10 +51,6 @@ Then go to this URL in your browser:
 You should see the status of all of your builds.  The screen will
 refresh every 15 seconds to keep itself up to date.
 
-NOTE: GreenScreen is set up so that the name of the project will flash
-when it is building, but neither Safari nor IE support blinking text.
-You probably want to use Firefox to get the most value out of it.
-
 If running on Windows, I'd suggest running Firefox in full screen
 mode.  If on a Mac, either expand the window size to take up as much
 space as possible, or try finding a plugin that lets you go full

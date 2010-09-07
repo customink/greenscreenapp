@@ -2,18 +2,28 @@ body {
   text-align: center;
   font-size: small;
   margin: 0;
-  font-family: Helvetica, Arial, "Sans Serif";
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
-div {
+div.status {
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+div.content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
 }
 
 h1 {
   margin: 0;
   padding: 0;
   line-height: 1.2em;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 p {
@@ -25,7 +35,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: inherit;
 }
 
 .clear {
@@ -37,23 +47,42 @@ a {
   float: left;
 }
 
-.border {
-  height: 100%;
-  border: black 1px solid;
+.success {
+  color: #119911;
+  background-color: #93F58E;
 }
 
-.success {
-  background-color: #76EE00;
+.success strong {
+  color: #060;
 }
 
 .failure {
-  background-color: #FA8072;
+  color: #fff;
+  background-color: #990000;
+}
+
+.failure p {
+  color: #c99;
+}
+
+.failure strong {
+  color: #fff;
 }
 
 .unknown {
+  color: #666666;
   background-color: #999999;
 }
 
 .building {
-  text-decoration: blink;
+  background-color: #FFFF44;
+  color: black;
+}
+
+.building.failure {
+  color: #990000;
+}
+
+.building.failure strong {
+  color: #990000;
 }

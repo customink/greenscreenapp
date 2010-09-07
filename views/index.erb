@@ -3,6 +3,7 @@
     <title>Green Screen - Monitor Your Builds</title>
     <meta http-equiv="refresh" content="15" />
     <link rel='stylesheet' href='/styles.css' type='text/css' media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="/prototype.js"></script>
     <script type="text/javascript" src="/date.js"></script>
     <script type="text/javascript">
@@ -13,17 +14,20 @@
           element.innerHTML = ts.relativeTimeInWords(new Date());
         });
       });
-
     </script>
     <style type="text/css">
       <% rows = [@rows, 1].max %>
+      <% h1size = 100 / rows * 3 %>
       .status {
       	width: <%= 100 / @columns %>%;
       	height: <%= 100 / rows %>%;
       }
       h1 {
-        margin-top: <%= 50 / rows %>px;
-        font-size: <%= 100 / rows * 3 %>px;
+        font-size: <%= h1size %>px;
+      }
+      div.content {
+        height: <%= h1size * 1.2 + 12 %>px;
+        margin-top: -<%= h1size * 1.2 / 2 + 6 %>px;
       }
     </style>
   </head>
@@ -33,10 +37,15 @@
     <% end %>
 
     <% @projects.each do |project| %>
-      <div class="status <%= project.last_build_status %>">
-        <div class="border">
-          <h1 class="<%= project.activity %>"><a href="<%= project.web_url%>"><%= project.name %></a></h1>
-          <p>Build <strong><%= project.last_build_label %></strong> was a <strong><%= project.last_build_status %></strong> <span class="build_time" title="<%= project.last_build_time %>"><%= project.last_build_time %></span></p>
+      <div class="status <%= project.last_build_status %> <%= project.activity %>">
+        <div class="content">
+          <h1 title="<%= project.name %>"><a href="<%= project.web_url%>"><%= project.name %></a></h1>
+          <p>
+            Build <%= project.last_build_label %> was a
+            <strong><%= project.last_build_status %></strong>
+            <span class="build_time" title="<%= project.last_build_time %>"><%= project.last_build_time %></span>.
+            <% if (project.building?) %>Building now.<% end %>
+          </p>
         </div>
       </div>
     <% end %>

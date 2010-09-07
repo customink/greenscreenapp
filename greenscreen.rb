@@ -67,4 +67,8 @@ class MonitoredProject
     @last_build_status = project.attributes["lastBuildStatus"].downcase
     @name = project.attributes["name"]
   end
+
+  def building?
+    self.activity =~ /building/i
+  end
 end
