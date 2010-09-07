@@ -16,11 +16,11 @@
       });
     </script>
     <style type="text/css">
-      <% rows = [@rows, 1].max %>
+      <% rows = [@rows, 1.0].max %>
       <% h1size = 100 / rows * 3 %>
       .status {
       	width: <%= 100 / @columns %>%;
-      	height: <%= 100 / rows %>%;
+      	height: <%= 100.0 / rows %>%;
       }
       h1 {
         font-size: <%= h1size %>px;

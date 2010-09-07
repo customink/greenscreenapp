@@ -3,6 +3,7 @@ body {
   font-size: small;
   margin: 0;
   font-family: 'Helvetica Neue', sans-serif;
+  background-color: #93F58E;
 }
 
 div.status {
