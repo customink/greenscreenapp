@@ -44,6 +44,8 @@ get '/' do
     end
   end
 
+  @projects = @projects.sort_by { |p| p.name.downcase }
+
   @columns = 1.0
   @columns = 2.0 if @projects.size > 4
   @columns = 3.0 if @projects.size > 10
