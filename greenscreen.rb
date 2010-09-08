@@ -6,9 +6,11 @@ require 'erb'
 require 'rexml/document'
 require 'hpricot'
 require 'open-uri'
+require 'yaml'
+require 'erb'
 
 get '/' do
-  servers = YAML.load_file 'config.yml'
+  servers = load_servers
   return "Add the details of build server to the config.yml file to get started" unless servers
 
   @projects = []
@@ -54,6 +56,10 @@ get '/' do
   @rows = (@projects.size / @columns).ceil
 
   erb :index
+end
+
+def load_servers
+  YAML.load(StringIO.new(ERB.new(File.read 'config.yml').result))
 end
 
 class MonitoredProject
