@@ -4,7 +4,7 @@ namespace :bundle do
   desc "Install the gems needed according to the Gemfile"
   task :expand => :ensure_bundler_available do
     system("bundle install")
-    fail bordered_message("bundler failed") unless $? == 0
+    fail "bundler failed" unless $? == 0
   end
 
   task :ensure_bundler_available do
