@@ -42,7 +42,7 @@
         <div class="content">
           <h1 title="<%= project.name %>"><a href="<%= project.web_url%>"><%= project.name %></a></h1>
           <p>
-            Build <%= project.last_build_label %> was a
+            Build <%= project.last_build_label %> was <%= "a" unless project.last_build_status == 'unknown' %>
             <strong><%= project.last_build_status %></strong>
             <span class="build_time" title="<%= project.last_build_time %>"><%= project.last_build_time %></span>.
           </p>
