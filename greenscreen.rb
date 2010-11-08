@@ -67,7 +67,7 @@ def accumulate_projects(server, xml)
     else
       monitored_project
     end
-  end.flatten
+  end.flatten.compact
 end
 
 class MonitoredProject
