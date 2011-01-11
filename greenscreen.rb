@@ -8,6 +8,7 @@ require 'hpricot'
 require 'open-uri'
 require 'yaml'
 require 'erb'
+require 'timeout' # to catch error
 
 get '/' do
   servers = load_servers
@@ -24,6 +25,8 @@ get '/' do
       xml = REXML::Document.new(open(server["url"], open_opts))
       @projects.push(*accumulate_projects(server, xml))
     rescue => e
+      @projects.push(MonitoredProject.server_down(server, e))
+    rescue Timeout::Error => e
       @projects.push(MonitoredProject.server_down(server, e))
     end
   end
