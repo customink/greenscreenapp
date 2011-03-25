@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: hsl(117, 76%, 84%);
+  padding: 0 .5em;
+}
+.project {
+  float: left;
+  position: relative;
+  min-height: 10em;
+}
+section {
+  display: box;
+    display: -moz-box;
+    display: -webkit-box;
+  box-orient: vertical;
+    -moz-box-orient: vertical;
+  box-pack: center;
+    -moz-box-pack: center;
+  box-align: center;
+    -moz-box-align: center;
+  width: 100%;
+  height: 100%;
+}
+h1 {
+  font-size: 7em;
+  line-height: 1.2;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.status {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+a, a:active, a:visited, a:link {
+  text-decoration: none;
+  color: inherit !important;
+}
+.building:before {
+  display: inline;
+  content: 'Building now';
+  position: absolute;
+  top: .2em;
+  right: .2em;
+  padding: .2em .5em;
+  background-color: #444;
+  color: #fff;
+     -moz-border-radius: .75em; /* FF1+ */
+  -webkit-border-radius: .75em; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: .75em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+}
+.success h1 {
+  color: hsl(120, 80%, 33%);
+  text-shadow: 3px 3px hsl(117, 70%, 74%), -1px -1px hsl(120, 80%, 90%);
+}
+.success .status {
+  color: hsl(120, 80%, 33%);
+  text-shadow: 0 1px hsl(117, 76%, 95%);
+}
+.success strong {
+  color: hsl(120, 80%, 23%);
+}
+.failure,
+.building,
+.unknown {
+     -moz-border-radius: 1em; /* FF1+ */
+  -webkit-border-radius: 1em; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 1em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+}
+.failure {
+  background-color: hsl(0, 100%, 30%);
+}
+.failure h1 {
+  color: #fff;
+  text-shadow: 3px 3px hsl(0, 100%, 20%);
+}
+.failure .status {
+  color: hsl(0, 33%, 70%);
+  text-shadow: 2px 2px hsl(0, 100%, 20%);
+}
+.failure strong {
+  color: hsl(0, 33%, 90%);
+}
+
+.unknown {
+  background-color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 40%);
+}
+.unknown h1 {
+  text-shadow: 3px 3px hsl(0, 0%, 50%);
+}
+.unknown .status {
+  text-shadow: 0 1px hsl(0, 0%, 80%);
+}
+
+.building {
+  background-color: hsl(60, 100%, 63%);
+  color: hsl(0, 0%, 27%);
+}
+.building h1 {
+  text-shadow: 2px 2px hsl(60, 100%, 33%);
+}
+.building .status {
+  text-shadow: 0 1px hsl(60, 100%, 85%);
+}
