@@ -32,13 +32,8 @@ get '/' do
   end
 
   @projects = @projects.sort_by { |p| p.name.downcase }
-
-  @columns = 1.0
-  @columns = 2.0 if @projects.size > 4
-  @columns = 3.0 if @projects.size > 10
-  @columns = 4.0 if @projects.size > 21
-
-  @rows = (@projects.size / @columns).ceil
+  @successful_projects = @projects.select { |p| p.last_build_status == 'success' }
+  @unsuccessful_projects = @projects.select { |p| p.last_build_status != 'success' }
 
   erb :index
 end

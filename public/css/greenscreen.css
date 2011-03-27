@@ -1,82 +1,200 @@
 html, body {
   height: 100%;
   overflow: auto;
-}
-body {
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: hsl(117, 76%, 84%);
-  padding: 0 .5em;
 }
-.project {
-  float: left;
-  position: relative;
-  min-height: 10em;
+a, a:active, a:visited, a:link {
+  text-decoration: none;
+  color: inherit;
 }
-section {
-  display: box;
-    display: -moz-box;
-    display: -webkit-box;
-  box-orient: vertical;
-    -moz-box-orient: vertical;
-  box-pack: center;
-    -moz-box-pack: center;
-  box-align: center;
-    -moz-box-align: center;
-  width: 100%;
-  height: 100%;
+ul, li {
+  margin: 0;
+  list-style: none;
 }
 h1 {
+  overflow: hidden;
   font-size: 7em;
   line-height: 1.2;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   white-space: nowrap;
   text-transform: capitalize;
 }
-.status {
-  font-size: 1.2em;
-  line-height: 1.6;
+
+#mini_projects {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+     -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+          box-orient: vertical;
+  width: 14em;
+  height: 100%;
 }
-a, a:active, a:visited, a:link {
-  text-decoration: none;
-  color: inherit !important;
+#mini_projects:after {
+  display: block;
+  content: '\00A0';
+     -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+          box-flex: 1;
 }
-.building:before {
-  display: inline;
+.mini-project {
+  color: #666;
+  text-shadow: 0 -1px #000;
+  line-height: 1.22;
+  padding: .5em;
+}
+.mini-project:before {
+  content: '\00A0';
+  display: inline-block;
+  width: .5em;
+  height: .5em;
+  vertical-align: middle;
+     -moz-border-radius: .5em; /* FF1+ */
+  -webkit-border-radius: .5em; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: .5em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+  background-color: green;
+  background-image: -moz-radial-gradient(center 45deg, circle closest-side, hsl(120, 100%, 90%) 0%, hsl(120, 100%, 35%) 100%);
+  background-image: -webkit-radial-gradient(center 45deg, circle closest-side, hsl(120, 100%, 50%) 0%, green 100%);
+     -moz-box-shadow: 0 1px 0 0 #555, 0 -1px 0 0 #000;
+  -webkit-box-shadow: 0 1px 0 0 #555, 0 -1px 0 0 #000;
+          box-shadow: 0 1px 0 0 #555, 0 -1px 0 0 #000;
+}
+#mini_projects:after,
+.mini-project {
+  border-style: solid;
+  border-width: 1px 0;
+  border-top-color: #333;
+  border-bottom-color: #111;
+  background-color: #222;
+  background-image: -moz-linear-gradient(top, #1f1f1f, #252525); /* FF3.6 */
+  background-image: -o-linear-gradient(top, #1f1f1f, #252525); /* Opera 11.10+ */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #1f1f1f),color-stop(1, #252525)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(#1f1f1f, #252525); /* Chrome 10+, Saf5.1+ */
+  background-image: linear-gradient(top, #1f1f1f, #252525);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1f1f1f', EndColorStr='#252525'); /* IE6–IE9 */
+}
+.mini-project .build-time {
+  display: block;
+  font-size: .6em;
+  padding-left: 1.25em;
+}
+
+.project-name {
+  text-transform: capitalize;
+}
+
+#build_state {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 14em;
+  padding-top: .5%;
+  background-color: hsl(0, 0%, 20%);
+}
+#build_state.failure-projects {
+  background-color: hsl(0, 100%, 20%);
+}
+#build_state.building-projects {
+  background-color: hsl(60, 100%, 25%);
+}
+.state-ct {
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: hsl(120, 80%, 33%);
+  background-color: hsl(117, 76%, 84%);
+  background-image: -moz-radial-gradient(center 45deg, circle closest-side, hsl(117, 76%, 84%) 0%, hsl(117, 76%, 74%) 100%);
+  background-image: -webkit-radial-gradient(center 45deg, circle closest-side, hsl(117, 76%, 84%) 0%, hsl(117, 76%, 74%) 100%);
+}
+#ok {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+     -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+          box-orient: vertical;
+     -moz-box-pack: center;
+  -webkit-box-pack: center;
+          box-pack: center;
+     -moz-box-align: center;
+  -webkit-box-align: center;
+          box-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 1;
+}
+#ok .bigtext-line0 {
+  text-shadow: 0.025em 0.025em hsl(117, 76%, 70%);
+}
+#ok .bigtext-line1 {
+  text-shadow: 0.05em 0.05em hsl(117, 76%, 60%);
+}
+#unsuccessful_projects {
+  width: 100%;
+  height: 100%;
+}
+.project {
+  float: left;
+}
+.project-section {
+  position: relative;
+  height: 97%;
+  margin: 0 .75%;
+     -moz-border-radius: 1em; /* FF1+ */
+  -webkit-border-radius: 1em; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 1em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+}
+.project-ct {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+     -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+          box-orient: vertical;
+     -moz-box-pack: center;
+  -webkit-box-pack: center;
+          box-pack: center;
+     -moz-box-align: center;
+  -webkit-box-align: center;
+          box-align: center;
+  width: 100%;
+  height: 100%;
+}
+.project:first-of-type:last-of-type > .project-section {
+  height: 98%;
+  margin-bottom: 2%;
+}
+
+/* ============== */
+
+.building > .project-section:before {
   content: 'Building now';
   position: absolute;
-  top: .2em;
-  right: .2em;
+  top: .5em;
+  right: .5em;
   padding: .2em .5em;
   background-color: #444;
   color: #fff;
      -moz-border-radius: .75em; /* FF1+ */
   -webkit-border-radius: .75em; /* Saf3-4, iOS 1+, Android 1.5+ */
           border-radius: .75em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+     -moz-box-shadow: 2px 2px hsl(60, 100%, 33%);
+  -webkit-box-shadow: 2px 2px hsl(60, 100%, 33%);
+          box-shadow: 2px 2px hsl(60, 100%, 33%);
 }
-.success h1 {
-  color: hsl(120, 80%, 33%);
-  text-shadow: 3px 3px hsl(117, 70%, 74%), -1px -1px hsl(120, 80%, 90%);
+.status {
+  font-size: 1.2em;
+  line-height: 1.6;
 }
-.success .status {
-  color: hsl(120, 80%, 33%);
-  text-shadow: 0 1px hsl(117, 76%, 95%);
-}
-.success strong {
-  color: hsl(120, 80%, 23%);
-}
-.failure,
-.building,
-.unknown {
-     -moz-border-radius: 1em; /* FF1+ */
-  -webkit-border-radius: 1em; /* Saf3-4, iOS 1+, Android 1.5+ */
-          border-radius: 1em; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
-}
-.failure {
+
+.failure > .project-section {
   background-color: hsl(0, 100%, 30%);
 }
 .failure h1 {
   color: #fff;
-  text-shadow: 3px 3px hsl(0, 100%, 20%);
+  text-shadow: .025em .025em hsl(0, 100%, 20%);
 }
 .failure .status {
   color: hsl(0, 33%, 70%);
@@ -86,7 +204,7 @@ a, a:active, a:visited, a:link {
   color: hsl(0, 33%, 90%);
 }
 
-.unknown {
+.unknown > .project-section {
   background-color: hsl(0, 0%, 60%);
   color: hsl(0, 0%, 40%);
 }
@@ -97,7 +215,7 @@ a, a:active, a:visited, a:link {
   text-shadow: 0 1px hsl(0, 0%, 80%);
 }
 
-.building {
+.building > .project-section {
   background-color: hsl(60, 100%, 63%);
   color: hsl(0, 0%, 27%);
 }
