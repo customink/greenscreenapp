@@ -6,6 +6,11 @@ your server to the list of apps that are monitored.
 
 Simply update `config.yml` to include your ci servers details.
 
+After your pull request has been accepted, you'll  be able to monitor
+your build, and other people's builds, on the [greenscreenapp site][gsa].
+
+[gsa]: http://blooming-sky-53.heroku.com/
+
 # GreenScreen
 
 ## Introduction
