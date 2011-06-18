@@ -12,11 +12,11 @@ from anywhere in the room.
 
 To get the GreenScreen application itself, you can clone it from git:
 
-    $ git clone git://github.com/martinjandrews/greenscreen.git
+    $ git clone git://github.com/customink/greenscreen.git
 
 Or download the project by clicking on the 'download' link [on this page][dl].
 
-[dl]: http://github.com/martinjandrews/greenscreen/
+[dl]: https://github.com/customink/greenscreen
 
 To install all of GreenScreen's dependencies, switch to its directory
 and do:
