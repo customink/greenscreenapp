@@ -60,3 +60,13 @@ screen.
 
 GreenScreen also includes a rackup file (`config.ru`) so you can
 deploy it under whichever rack-supporting webserver you like.
+
+## Credits
+
+GreenScreen was original developed by [martinjandrews][mja].
+
+[dl]: https://github.com/martinjandrews/greenscreen/
+
+This version of GreenScreen is a fork of the updates made by [rsutphin][rs].
+
+[rs]: https://github.com/rsutphin/greenscreen/
