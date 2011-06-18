@@ -1,3 +1,11 @@
+# GreenScreen App
+
+GreenScreen App is an sample instance of GreenScreen.  If you have 
+a public build server, you can submit a pull request and we'll add
+your server to the list of apps that are monitored.
+
+Simply update `config.yml` to include your ci servers details.
+
 # GreenScreen
 
 ## Introduction
