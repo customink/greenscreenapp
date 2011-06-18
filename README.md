@@ -65,7 +65,7 @@ deploy it under whichever rack-supporting webserver you like.
 
 GreenScreen was original developed by [martinjandrews][mja].
 
-[dl]: https://github.com/martinjandrews/greenscreen/
+[mja]: https://github.com/martinjandrews/greenscreen/
 
 This version of GreenScreen is a fork of the updates made by [rsutphin][rs].
 
