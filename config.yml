@@ -8,7 +8,7 @@
 # -
 #   url: http://localhost:8080/cc.xml
 -
-  url: http://ec2-50-17-89-74.compute-1.amazonaws.com:8080/cc.xml
+  url: http://ci.jenkins-ci.org/view/All/cc.xml
 
 
 # A server with basic authentication.
